@@ -6,11 +6,11 @@
 /*   By: luigi_streber <luigi_streber@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:11:27 by lubravo-          #+#    #+#             */
-/*   Updated: 2024/04/28 21:43:10 by luigi_streb      ###   ########.fr       */
+/*   Updated: 2024/05/04 19:26:31 by luigi_streb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
 
 int	ft_isascii(int c)
 {

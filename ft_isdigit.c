@@ -6,11 +6,11 @@
 /*   By: luigi_streber <luigi_streber@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:42:35 by lubravo-          #+#    #+#             */
-/*   Updated: 2024/04/28 21:43:58 by luigi_streb      ###   ########.fr       */
+/*   Updated: 2024/05/04 19:26:46 by luigi_streb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lubravo- <lubravo-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luigi_streber <luigi_streber@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:36:07 by lubravo-          #+#    #+#             */
-/*   Updated: 2024/04/24 13:15:31 by lubravo-         ###   ########.fr       */
+/*   Updated: 2024/05/04 19:26:05 by luigi_streb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: luigi_streber <luigi_streber@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:49:24 by lubravo-          #+#    #+#             */
-/*   Updated: 2024/04/28 21:45:28 by luigi_streb      ###   ########.fr       */
+/*   Updated: 2024/05/04 19:26:12 by luigi_streb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {

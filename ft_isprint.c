@@ -6,11 +6,11 @@
 /*   By: luigi_streber <luigi_streber@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:29:38 by lubravo-          #+#    #+#             */
-/*   Updated: 2024/04/28 21:44:31 by luigi_streb      ###   ########.fr       */
+/*   Updated: 2024/05/04 19:26:59 by luigi_streb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
