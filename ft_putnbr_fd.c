@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luigi_streber <luigi_streber@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 12:28:26 by luigi_streb       #+#    #+#             */
-/*   Updated: 2024/05/19 23:26:08 by luigi_streb      ###   ########.fr       */
+/*   Created: 2024/05/16 11:59:28 by luigi_streb       #+#    #+#             */
+/*   Updated: 2024/05/18 20:06:01 by luigi_streb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
-	size_t	sbuff;
-
-	if (!s)
-		return (NULL);
-	sbuff = ft_strlen(s);
-	if ((size_t)start >= sbuff)
-		return (ft_strdup(""));
-	if (len == 0)
+	if (n == 0)
+		ft_putchar_fd('0', fd);
+	if (n < 0)
 	{
-		return (ft_strdup(""));
+		ft_putchar_fd('-', fd);
+		n = -n;
 	}
-	if (len > sbuff - start)
-		len = sbuff - start;
-	str = malloc(len + 1);
-	if (!str)
-		return (NULL);
-	else
+	if (n == -2147483648)
+		ft_putstr_fd("2147483648", fd);
+	if (n <= 9 && n > 0)
+		ft_putchar_fd(n + 48, fd);
+	else if (n > 0)
 	{
-		ft_memcpy(str, s + start, len);
-		str[len] = '\0';
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + 48, fd);
 	}
-	return (str);
 }
