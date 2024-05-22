@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: luigi_streber <luigi_streber@student.42    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/05/21 14:36:35 by luigi_streb       #+#    #+#              #
+#    Updated: 2024/05/23 00:21:27 by luigi_streb      ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 
 CC = gcc
@@ -45,6 +57,18 @@ INCLUDE = libft.h
 
 OBJS = $(UTILS:.c=.o)
 
+BONUS = ft_lstnew.c\
+		ft_lstlast.c\
+		ft_lstadd_back.c\
+		ft_lstsize.c\
+		ft_lstdelone.c\
+		ft_lstiter.c\
+		ft_lstclear.c\
+		ft_lstmap.c\
+		ft_lstadd_front.c
+
+
+BONUS_OBJS = $(BONUS:.c=.o)
 all : $(NAME)
 
 %.o: %.c
@@ -54,11 +78,14 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean $(NAME)
+
+bonus:			$(OBJS) $(BONUS_OBJS)
+				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY: all clean fclean re bonus

@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luigi_streber <luigi_streber@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/05 16:56:22 by luigi_streb       #+#    #+#             */
-/*   Updated: 2024/05/23 01:15:18 by luigi_streb      ###   ########.fr       */
+/*   Created: 2024/05/22 17:11:58 by luigi_streb       #+#    #+#             */
+/*   Updated: 2024/05/22 18:55:13 by luigi_streb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+int	ft_lstsize(t_list *lst)
 {
-	unsigned int	mall;
-	unsigned char	*memory;
+	t_list	*x;
+	int		i;
 
-	mall = (count * size);
-	memory = malloc(mall);
-	if (!memory)
-		return (NULL);
-	if (memory)
-		ft_bzero(memory, mall);
-	return (memory);
+	i = 0;
+	x = lst;
+	while (x)
+	{
+		x = x -> next;
+		i++;
+	}
+	return (i);
 }

@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luigi_streber <luigi_streber@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/05 16:56:22 by luigi_streb       #+#    #+#             */
-/*   Updated: 2024/05/23 01:15:18 by luigi_streb      ###   ########.fr       */
+/*   Created: 2024/05/22 23:35:47 by luigi_streb       #+#    #+#             */
+/*   Updated: 2024/05/23 01:05:16 by luigi_streb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned int	mall;
-	unsigned char	*memory;
+	t_list	*new;
+	t_list	*newnode;
 
-	mall = (count * size);
-	memory = malloc(mall);
-	if (!memory)
-		return (NULL);
-	if (memory)
-		ft_bzero(memory, mall);
-	return (memory);
+	new = NULL;
+	while (lst)
+	{
+		newnode = ft_lstnew(f(lst->content));
+		if (!newnode)
+		{
+			ft_lstclear(&new, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new, newnode);
+		lst = lst -> next;
+	}
+	return (new);
 }

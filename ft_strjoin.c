@@ -6,7 +6,7 @@
 /*   By: luigi_streber <luigi_streber@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:42:40 by luigi_streb       #+#    #+#             */
-/*   Updated: 2024/05/07 13:55:22 by luigi_streb      ###   ########.fr       */
+/*   Updated: 2024/05/23 01:14:33 by luigi_streb      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s3 = malloc(buff3 + 1);
 	if (s3 == NULL)
 		return (NULL);
-	s3 = ft_strncpy (s3, s1, strlen(s1) + 1);
+	s3 = ft_strncpy (s3, s1, ft_strlen(s1) + 1);
 	s3 = ft_strncat(s3, s2, buff3);
 	return (s3);
 }
