@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lubravo- <lubravo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/23 11:48:08 by lubravo-          #+#    #+#             */
-/*   Updated: 2024/05/23 11:48:12 by lubravo-         ###   ########.fr       */
+/*   Created: 2024/05/23 11:47:05 by lubravo-          #+#    #+#             */
+/*   Updated: 2024/05/23 11:47:10 by lubravo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+t_list	*ft_lstlast(t_list *lst)
 {
-	unsigned char			*x_dst;
-	const unsigned char		*x_src;
-	size_t					i;
+	t_list	*k;
 
-	x_dst = (unsigned char *) dst;
-	x_src = (const unsigned char *) src;
-	i = 0;
-	if (!x_dst && !x_src)
-		return (0);
-	while (i < n)
+	k = lst;
+	while (k)
 	{
-		x_dst[i] = x_src[i];
-		i++;
+		if (!(k -> next))
+		{
+			return (k);
+		}
+		k = k -> next;
 	}
-	return (dst);
+	return (k);
 }
-	//size_t					buffer;
-	/*buffer = ft_strlen(dst);
-	if (n > buffer)
-		return (0);*/

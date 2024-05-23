@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luigi_streber <luigi_streber@student.42    +#+  +:+       +#+        */
+/*   By: lubravo- <lubravo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 18:53:55 by lubravo-          #+#    #+#             */
-/*   Updated: 2024/05/23 00:20:44 by luigi_streb      ###   ########.fr       */
+/*   Created: 2024/05/23 11:51:48 by lubravo-          #+#    #+#             */
+/*   Updated: 2024/05/23 11:55:10 by lubravo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 # include <string.h>
 # include <ctype.h>
 
-//PARA COMPILAR
-//make && gcc -o main main.c -L. -lft && ./main
 int		ft_isalnum(int c);
 void	ft_bzero(void *s, size_t n);
 int		ft_isalpha(int c);

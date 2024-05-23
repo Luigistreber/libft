@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lubravo- <lubravo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/23 11:48:08 by lubravo-          #+#    #+#             */
-/*   Updated: 2024/05/23 11:48:12 by lubravo-         ###   ########.fr       */
+/*   Created: 2024/05/23 11:47:26 by lubravo-          #+#    #+#             */
+/*   Updated: 2024/05/23 11:47:29 by lubravo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	unsigned char			*x_dst;
-	const unsigned char		*x_src;
-	size_t					i;
+	t_list	*x;
 
-	x_dst = (unsigned char *) dst;
-	x_src = (const unsigned char *) src;
-	i = 0;
-	if (!x_dst && !x_src)
-		return (0);
-	while (i < n)
-	{
-		x_dst[i] = x_src[i];
-		i++;
-	}
-	return (dst);
+	x = (t_list *)malloc(sizeof(t_list));
+	if (!x)
+		return (NULL);
+	x->content = content;
+	x->next = NULL;
+	return (x);
 }
-	//size_t					buffer;
-	/*buffer = ft_strlen(dst);
-	if (n > buffer)
-		return (0);*/

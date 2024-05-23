@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luigi_streber <luigi_streber@student.42    +#+  +:+       +#+        */
+/*   By: lubravo- <lubravo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/16 11:41:13 by luigi_streb       #+#    #+#             */
-/*   Updated: 2024/05/19 23:30:03 by luigi_streb      ###   ########.fr       */
+/*   Created: 2024/05/23 11:49:17 by lubravo-          #+#    #+#             */
+/*   Updated: 2024/05/23 15:41:23 by lubravo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ static char	**ft_memdinamic(int wordsnum)
 	return (strings);
 }
 
-static void	ft_free_words(char **strings)
+static void	ft_free_words(char **strings, size_t index)
 {
 	size_t	i;
 
 	i = 0;
-	while (strings[i])
+	while (i < index && strings[i])
 	{
 		free(strings[i]);
 		i++;
@@ -77,7 +77,7 @@ static char	**ft_new_words(char **strings, char *s, char c)
 		strings[index] = ft_substr(s, start, i - start);
 		if (!strings[index])
 		{
-			ft_free_words(strings);
+			ft_free_words(strings, index);
 			return (NULL);
 		}
 		index++;
@@ -97,34 +97,7 @@ char	**ft_split(char const *s, char c)
 	strings = ft_memdinamic(word_count);
 	if (!strings)
 		return (NULL);
-	ft_new_words(strings, (char *)s, c);
+	if (!ft_new_words(strings, (char *)s, c))
+		return (NULL);
 	return (strings);
 }
-/*static int	ft_counterwords(char *s, char c)
-{
-	int		count;
-	size_t	i;
-	size_t	j;
-
-	count = 0;
-	i = 0;
-	while (i < strlen(s))
-	{
-		while (i < ft_strlen(s))
-		{
-			if (ft_strchr(&c, s[i]) == NULL)
-				break ;
-			i++;
-		}
-		j = i;
-		while (i < strlen(s))
-		{
-			if ((ft_strchr(&c, s[i]) != NULL))
-				break ;
-			i++;
-		}
-		if (i > j)
-			count++;
-	}
-	return (count);
-}*/
